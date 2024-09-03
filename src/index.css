@@ -12,6 +12,7 @@ body{
 
   color-scheme: light dark;
   background-color: #242424;
+  color: #E5D5C4;
 
   margin: 0;
   padding: 0;
@@ -22,6 +23,27 @@ body{
   justify-content: center;
 }
 
-a{
-    text-decoration: none;
+nav *{
+  position: relative;
+  text-decoration: none;
+  padding: 0 10px;
+}
+
+nav *:after{
+  content: "";
+  position: absolute;
+  background-color: #BF1516;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+
+nav *:hover{
+  color: #fff
+}
+
+nav *:hover:after{
+  width: 100%;
 }
