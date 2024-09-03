@@ -7,6 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
+        "custom-black": "#111111",
+        "custom-black-secondary": "#151515",
         "custom-red": "#BF1516",
         "custom-cream": "#E5D5C4"
       }
