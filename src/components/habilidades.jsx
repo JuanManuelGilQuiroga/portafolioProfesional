@@ -51,7 +51,7 @@ export function Habilidades () {
     ]
 
     return (
-        <div className="h-[40vh] flex flex-col justify-between items-center w-[70vw] mt-[10vh]">
+        <div className="h-[35vh] flex flex-col justify-between items-center w-[70vw] mt-[10vh]" id='habilidades'>
             <h2 className="text-center text-4xl font-bold">Habilidades</h2>
             <div className="flex flex-row justify-center items-center flex-wrap gap-6">
                 <Habilidad tecnologias={tecnologias}/>

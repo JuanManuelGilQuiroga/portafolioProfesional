@@ -1,6 +1,6 @@
 export function Inicio () {
     return (
-        <main className="h-[90vh] flex flex-col justify-center gap-6 items-center mt-[-4vh]">
+        <main className="h-[90vh] flex flex-col justify-center gap-6 items-center mt-[-4vh]" id="inicio">
             <h1 className="text-center text-8xl font-bold">Juan Manuel Gil Quiroga<span className="text-custom-red font-bold">.</span></h1>
             <p className="text-center text-4xl">Web <span className="text-custom-red font-bold">Developer</span></p>
             <div className="flex justify-center items-center gap-6 w-full h-[10%]">
