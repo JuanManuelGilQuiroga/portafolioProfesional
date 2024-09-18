@@ -22,8 +22,8 @@ function App() {
         <div className='flex flex-row flex-wrap justify-between gap-6 h-auto w-[80%] mt-[10vh]'>
           <Proyectos titulo="CineCampus" imagen={cineCampus} descripcion="Creacion de API para consumir MongoDB con node.js y express.js usando MVC, el consumo de la misma esta creado con ayuda de React y Tailwind." tecnologias={["React", "Tailwind", "Node.js", "Express.js", "MongoDB"]}/>
           <Proyectos titulo="CampusShop" imagen={campusShop} descripcion="FrontEnd de un e-commerce de ropa usando POO y lit como Framework." tecnologias={["Lit", "JavaScript", "Node.js"]}/>
-          <Proyectos titulo="FoodLover" imagen={foodLover} descripcion="Creacion de API para consumir MongoDB con node.js y express.js usando MVC, el consumo de la misma esta creado con ayuda de React y Tailwind." tecnologias={["HTML", "CSS"]}/>
-          <Proyectos titulo="Virtual Wallet" imagen={virtualWallet} descripcion="Creacion de API para consumir MongoDB con node.js y express.js usando MVC, el consumo de la misma esta creado con ayuda de React y Tailwind." tecnologias={["HTML", "CSS"]}/>
+          <Proyectos titulo="FoodLover" imagen={foodLover} descripcion="Creacion de una landing page acerca de comida, con diferentes secciones." tecnologias={["HTML", "CSS"]}/>
+          <Proyectos titulo="Virtual Wallet" imagen={virtualWallet} descripcion="Creación del frontEnd para una billetera virtual." tecnologias={["HTML", "CSS"]}/>
         </div>
       </div>
       <Habilidades />
