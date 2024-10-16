@@ -8,6 +8,7 @@ import cssIcon from '../assets/vscode-icons--file-type-css.svg'
 import htmlIcon from '../assets/vscode-icons--file-type-html.svg'
 import tailwindIcon from '../assets/vscode-icons--file-type-tailwind.svg'
 import { Habilidad } from './habilidad.jsx'
+import { motion } from 'framer-motion'
 
 export function Habilidades () {
 
@@ -52,7 +53,7 @@ export function Habilidades () {
 
     return (
         <div className="h-[35vh] flex flex-col justify-between items-center w-[70vw] mt-[10vh]" id='habilidades'>
-            <h2 className="text-center text-4xl font-bold">Habilidades</h2>
+            <motion.h2 animate={{opacity: 1}} initial={{opacity: 0}} transition={{duration: .5}} className="text-center text-4xl font-bold">Habilidades</motion.h2>
             <div className="flex flex-row justify-center items-center flex-wrap gap-6">
                 <Habilidad tecnologias={tecnologias}/>
             </div>
