@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion'
+import { useRef } from "react";
 
 export function Footer() {
+    const ref = useRef(null);
+
+    const isInView = useInView(ref, { once: true });
+
     const [buttonText, setButtonText] = useState('juanmanuelgilquiroga@gmail.com');
 
     const handleCopyClick = () => {
@@ -13,11 +18,11 @@ export function Footer() {
 
     return (
         <>
-            <div className="h-[35vh] flex flex-col justify-around items-center w-[70vw] mt-[20vh]" id='habilidades'>
-                <motion.h2 animate={{opacity: 1}} initial={{opacity: 0}} transition={{duration: .5}} className="text-center text-4xl font-bold">Contacto</motion.h2>
+            <motion.div ref={ref} animate={{ opacity: isInView ? 1 : 0 }} initial={{ opacity: 0 }} transition={{ duration: 0.8, delay: .3 }} className="h-[35vh] flex flex-col justify-around items-center w-[70vw] mt-[20vh]" id='habilidades'>
+                <motion.h2 animate={{opacity: isInView ? 1 : 0}} initial={{opacity: 0}} transition={{duration: .5}} className="text-center text-4xl font-bold">Contacto</motion.h2>
                 <p className="font-medium text-center w-[70%]">No dudes en ponerte en contacto conmigo para discutir cómo puedo contribuir a tus ideas.</p>
                 <motion.div whileHover={{ backgroundColor: '#BF1516', transition: { duration: 0.3 } }} whileTap={{ scale: 0.95 }}  onClick={handleCopyClick} className="rounded-3xl cursor-pointer bg-transparent flex justify-center items-center border-[0.2rem] border-custom-red w-[40vw] h-[10vh]" ><svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="currentColor" d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2zm-2 0l-8 5l-8-5zm0 12H4V8l8 5l8-5z"/></svg><a id='correo' className="border-l-2 px-3 my-2 ml-3">{buttonText}</a></motion.div>
-            </div>
+            </motion.div>
             <div className="flex justify-between items-center w-[80vw] h-[12vh] border-t-2 border-custom-cream">
                 <p className="font-medium text-center">@ 2024 / Juan Manuel Gil Quiroga</p>
                 <div className="flex justify-between">

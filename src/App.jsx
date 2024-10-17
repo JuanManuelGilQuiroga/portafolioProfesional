@@ -1,32 +1,24 @@
 import { AcercaDeMi } from './components/acercaDeMi.jsx'
 import { Header } from './components/header.jsx'
 import { Inicio } from './components/inicio.jsx'
-import { Proyectos } from './components/proyecto.jsx'
+import { Proyectos } from './components/proyectos.jsx'
 import { Habilidades } from './components/habilidades.jsx'
 import { MisionYVision } from './components/m&V.jsx'
 import { Footer } from './components/footer.jsx'
-import campusShop from './assets/campusStore.png'
-import foodLover from './assets/foodLover.webp'
-import virtualWallet from './assets/virtualWallet.png'
-import cineCampus from './assets/cineCampus.webp'
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
+import { useRef } from "react";
 
 function App() {
+  const ref = useRef(null);
+
+  const isInView = useInView(ref, { once: true });
 
   return (
     <>
       <Header />
       <Inicio />
       <AcercaDeMi />
-      <div className='flex flex-col justify-between items-center' id='proyectos'>
-        <motion.h2 animate={{opacity: 1}} initial={{opacity: 0}} transition={{duration: .5}} className="text-center text-4xl font-bold">Proyectos</motion.h2>
-        <div className='flex flex-row flex-wrap justify-around gap-6 h-auto w-[70%] mt-[10vh]'>
-          <Proyectos titulo="CineCampus" imagen={cineCampus} descripcion="Creacion de API para consumir MongoDB con node.js y express.js usando MVC, el consumo de la misma esta creado con ayuda de React y Tailwind." tecnologias={["React", "Tailwind", "Node.js", "Express.js", "MongoDB"]}/>
-          <Proyectos titulo="CampusShop" imagen={campusShop} descripcion="FrontEnd de un e-commerce de ropa usando POO y lit como Framework." tecnologias={["Lit", "JavaScript", "Node.js"]}/>
-          <Proyectos titulo="FoodLover" imagen={foodLover} descripcion="Creacion de una landing page acerca de comida, con diferentes secciones." tecnologias={["HTML", "CSS"]}/>
-          <Proyectos titulo="Virtual Wallet" imagen={virtualWallet} descripcion="Creación del frontEnd para una billetera virtual." tecnologias={["HTML", "CSS"]}/>
-        </div>
-      </div>
+      <Proyectos/>
       <Habilidades />
       <MisionYVision />
       <Footer />
