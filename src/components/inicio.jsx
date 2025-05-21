@@ -6,6 +6,7 @@ export function Inicio () {
     const [buttonText, setButtonText] = useState('juanmanuelgilquiroga@gmail.com');
 
     const handleCopyClick = () => {
+        navigator.clipboard.writeText('juanmanuelgilquiroga@gmail.com');
         setButtonText('Copiado!');
         setTimeout(() => {
         setButtonText('juanmanuelgilquiroga@gmail.com');
