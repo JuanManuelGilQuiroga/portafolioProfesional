@@ -6,16 +6,78 @@ import { Habilidades } from './components/habilidades.jsx'
 import { MisionYVision } from './components/m&V.jsx'
 import { Footer } from './components/footer.jsx'
 import { motion, useInView } from 'framer-motion'
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { Github, Linkedin, Mail } from "lucide-react"
 
 function App() {
   const ref = useRef(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen)
+  }
 
   const isInView = useInView(ref, { once: true });
 
   return (
     <>
-      <Header />
+      <Header toggleMobileMenu={toggleMobileMenu} mobileMenuOpen={mobileMenuOpen}/>
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 bg-black/95 z-40 md:hidden flex flex-col items-center justify-center">
+          <nav className="flex flex-col items-center space-y-8">
+            <a
+              href="#inicio"
+              className="text-2xl text-amber-50/80 hover:text-amber-50 transition-colors"
+              onClick={toggleMobileMenu}
+            >
+              Inicio
+            </a>
+            <a
+              href="#acercaDeMi"
+              className="text-2xl text-amber-50/80 hover:text-amber-50 transition-colors"
+              onClick={toggleMobileMenu}
+            >
+              Acerca de mí
+            </a>
+            <a
+              href="#proyectos"
+              className="text-2xl text-amber-50/80 hover:text-amber-50 transition-colors"
+              onClick={toggleMobileMenu}
+            >
+              Proyectos
+            </a>
+            <a
+              href="#habilidades"
+              className="text-2xl text-amber-50/80 hover:text-amber-50 transition-colors"
+              onClick={toggleMobileMenu}
+            >
+              Habilidades
+            </a>
+            <a
+              href="#objetivos"
+              className="text-2xl text-amber-50/80 hover:text-amber-50 transition-colors"
+              onClick={toggleMobileMenu}
+            >
+              Valores y Objetivos
+            </a>
+            <a
+              href="#contacto"
+              className="text-2xl text-amber-50/80 hover:text-amber-50 transition-colors"
+              onClick={toggleMobileMenu}
+            >
+              Contacto
+            </a>
+          </nav>
+          <div className="mt-12 flex gap-6">
+            <a href="https://github.com/JuanManuelGilQuiroga" className="text-amber-50/60 hover:text-amber-50 transition-colors">
+              <Github className="h-6 w-6" />
+            </a>
+            <a href="" className="text-amber-50/60 hover:text-amber-50 transition-colors">
+              <Linkedin className="h-6 w-6" />
+            </a>
+          </div>
+        </div>
+      )}
       <Inicio />
       <AcercaDeMi />
       <Proyectos/>
